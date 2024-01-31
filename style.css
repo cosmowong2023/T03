@@ -1,0 +1,60 @@
+#display {
+    width: 320px;
+    height: 80px;
+    background-color: black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  #displayValue {
+  
+    text-align: right;
+    line-height: 80px;
+    color: white;
+    font-size: 30px;
+    background-color: black;
+    margin: auto 10px;
+  }
+  
+  .operators > div {
+    width: 78px;
+    height: 80px;
+    background-color: #E7E7E7;
+    border: solid 1px #A9A9A9;
+    font-size: 30px;
+    text-align: center;
+    line-height: 80px;
+  }
+  .operators {display: flex;
+  }
+  
+  .number > div {
+    width: 78px;
+    height: 80px;
+    background-color: #FFFFFF;
+    border: solid 1px #A9A9A9;
+    font-size: 30px;
+    text-align: center;
+    line-height: 80px;
+  }
+  .number {display: flex;
+  }
+  
+  .equal {
+    width: 78px;
+    height: 326px;
+    background-color: #FA8664;
+    border: solid 1px #A9A9A9;
+    font-size: 30px;
+    text-align: center;
+    line-height: 320px;
+  }
+   #pad {
+     display: flex;
+   }
+   .botleft{
+     border-bottom-left-radius: 10px;
+   }
+   .equal{
+     border-bottom-right-radius: 10px;
+   }
