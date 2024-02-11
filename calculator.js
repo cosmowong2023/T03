@@ -1,3 +1,5 @@
+let newList = [1]
+let 
 function numberOnClick() {
     console.log(this);
 }
@@ -38,3 +40,6 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 }
 )
+
+let outputValue= document.getElementById("displayValue");
+newList.innerHTML=outputValue;
