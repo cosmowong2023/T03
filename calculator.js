@@ -1,5 +1,3 @@
-let name = document.getElementById("id")
-
 function numberOnClick() {
     console.log(this);
 }
