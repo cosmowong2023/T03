@@ -1,5 +1,5 @@
 let newList = [1]
-let 
+
 function numberOnClick() {
     console.log(this);
 }
