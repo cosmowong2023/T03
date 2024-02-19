@@ -1,5 +1,3 @@
-let newList = ["1"]
-
 function numberOnClick() {
   console.log(this);
   let magicNum = this;
