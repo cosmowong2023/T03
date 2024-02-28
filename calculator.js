@@ -1,6 +1,7 @@
 let newList = [""]
 let numberClick = true
 let inputValue = 0
+let dotted = false
 
 function numberOnClick() {
   if (numberClick==true)
@@ -24,6 +25,7 @@ function numberOnClick() {
       numberClick = true;
     }
   }
+  return newList
 }
 document.addEventListener('DOMContentLoaded', function() {
   let digitBtns = document.getElementsByClassName('digit');
@@ -36,25 +38,18 @@ document.addEventListener('DOMContentLoaded', function() {
 function dotOnClick() {
   if (numberClick==true)
   {
-    if ("." in newList)
-    {
       console.log(this);
       let inputdot = this.innerHTML;
       let outputValue = document.getElementById('displayValue');
-      newList += inputdot;
-      outputValue.innerHTML = newList;
-      numberClick = true;
-    }
-    else
-    {
-      console.log(this);
-      let inputdot = this.innerHTML;
-      let outputValue = document.getElementById('displayValue');
-      newList += inputdot;
-      outputValue.innerHTML = newList;
-      numberClick = true;
-    }
+      if (dotted==false)
+      {
+        newList += inputdot;
+        outputValue.innerHTML = newList;
+        numberClick = true;
+      }
   }
+  dotted = true
+  return dotted, numberClick
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -62,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let dotv = this.innerHTML;
   let inputValue = document.getElementById('displayValue');
   for (let i = 0; i < digitBtns.length; i++) {
-    digitBtns[i].addEventListener('click', operatorOnClick)
+    digitBtns[i].addEventListener('click', dotOnClick)
   }
 })
 
