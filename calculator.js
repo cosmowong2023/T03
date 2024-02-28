@@ -4,7 +4,7 @@ let inputValue = 0
 let dotted = false
 let previous_operator = ""
 let Math_error = false
-
+let NewValue = 0
 
 function numberOnClick() {
   if (Math_error==false){
@@ -107,30 +107,39 @@ if (Math_error==false)
       console.log(this);
       let inputoperator = this.innerHTML;
       let Value = document.getElementById('displayValue');
-      let NewValue = Value.innerHTML
+      NewValue = Value.innerHTML
       console.log(inputoperator)
       console.log(NewValue)
       
       { if (previous_operator == "+")
           {
-            let result = parseFloat(inputValue) + parseFloat(NewValue);
+            if (inputoperator != "=")
+            {
             previous_operator = inputoperator;
+            }
+            let result = parseFloat(inputValue) + parseFloat(NewValue);
             Value.innerHTML = ""+result
             inputValue=result
             numberClick=false
           }
         else if (previous_operator == "-")
           {
+            if (inputoperator != "=")
+              {
+              previous_operator = inputoperator;
+              }
             let result = parseFloat(inputValue) - parseFloat(NewValue);
-            previous_operator = inputoperator;
             Value.innerHTML = ""+result
             inputValue=result
             numberClick=false
           }
         else if (previous_operator == "x")
           {
+            if (inputoperator != "=")
+              {
+              previous_operator = inputoperator;
+              }
             let result = parseFloat(inputValue) * parseFloat(NewValue);
-            previous_operator = inputoperator;
             Value.innerHTML = ""+result
             inputValue=result
             numberClick=false
@@ -138,8 +147,11 @@ if (Math_error==false)
         else if (previous_operator == "/")
           {  if (parseFloat(NewValue) !=0)
             {
+              if (inputoperator != "=")
+                {
+                previous_operator = inputoperator;
+                }
               let result = parseFloat(inputValue) / parseFloat(NewValue);
-              previous_operator = inputoperator;
               Value.innerHTML = ""+result
               inputValue=result
               numberClick=false
@@ -150,7 +162,12 @@ if (Math_error==false)
               Math_error=true
             }
           }
-        else
+        else if (inputoperator == "=")
+          {
+            inputValue=NewValue;
+            numberClick=false;
+          }
+        else 
           {
             previous_operator = inputoperator;
             inputValue=NewValue;
@@ -158,10 +175,70 @@ if (Math_error==false)
           }
       }
     }
-    else
+    else 
     {
       let inputoperator = this.innerHTML;
-      previous_operator = inputoperator;
+      if (inputoperator == "=")
+        {
+          if (previous_operator == "+")
+          {
+            if (inputoperator != "=")
+            {
+            previous_operator = inputoperator;
+            }
+            let result = parseFloat(inputValue) + parseFloat(NewValue);
+            Value.innerHTML = ""+result
+            inputValue=result
+            numberClick=false
+          }
+        else if (previous_operator == "-")
+          {
+            if (inputoperator != "=")
+            {
+            previous_operator = inputoperator;
+            }
+            let result = parseFloat(inputValue) - parseFloat(NewValue);
+            Value.innerHTML = ""+result
+            inputValue=result
+            numberClick=false
+          }
+      else if (previous_operator == "x")
+        {
+          if (inputoperator != "=")
+            {
+            previous_operator = inputoperator;
+            }
+            let result = parseFloat(inputValue) * parseFloat(NewValue);
+            Value.innerHTML = ""+result
+            inputValue=result
+            numberClick=false
+        }
+      else if (previous_operator == "/")
+        {  
+          if (parseFloat(NewValue) !=0)
+          {
+            if (inputoperator != "=")
+            {
+              previous_operator = inputoperator;
+            }
+            let result = parseFloat(inputValue) / parseFloat(NewValue);
+            Value.innerHTML = ""+result
+            inputValue=result
+            numberClick=false
+          }
+          else
+          { let result = "Math Error!";
+            Value.innerHTML = ""+result
+            Math_error=true
+          }
+        }
+      }
+      else
+      { 
+        let inputoperator = this.innerHTML;
+        previous_operator = inputoperator;
+        console.log(inputoperator)
+      }
     }
   }
   dotted = false
