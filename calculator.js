@@ -2,6 +2,7 @@ let newList = [""]
 let numberClick = true
 let inputValue = 0
 let dotted = false
+let previous_operator = ""
 
 function numberOnClick() {
   if (numberClick==true)
@@ -25,7 +26,15 @@ function numberOnClick() {
       numberClick = true;
     }
   }
-  return newList, numberClick
+  else {
+    newList=""
+    console.log(this);
+    let magicNum = this.innerHTML;
+    let outputValue = document.getElementById('displayValue');
+    newList += magicNum;
+    outputValue.innerHTML = newList;
+    numberClick = true;
+  }
 }
 document.addEventListener('DOMContentLoaded', function() {
   let digitBtns = document.getElementsByClassName('digit');
@@ -48,14 +57,25 @@ function dotOnClick() {
         numberClick = true;
       }
   }
+  else
+  {
+    newList="0"
+    console.log(this);
+    let inputdot = this.innerHTML;
+    let outputValue = document.getElementById('displayValue');
+    if (dotted==false)
+    {
+      newList += inputdot;
+      outputValue.innerHTML = newList;
+      numberClick = true;
+    }
+}  
   dotted = true
   return dotted, numberClick
 }
 
 document.addEventListener('DOMContentLoaded', function() {
   let digitBtns = document.getElementsByClassName('dot');
-  let dotv = this.innerHTML;
-  let inputValue = document.getElementById('displayValue');
   for (let i = 0; i < digitBtns.length; i++) {
     digitBtns[i].addEventListener('click', dotOnClick)
   }
@@ -74,6 +94,24 @@ function qsa(selector) {
 }
 
 function operatorOnClick() {
+  if (numberClick==true)
+  {
+      console.log(this);
+      let inputoperator = this.innerHTML;
+      let Value = document.getElementById('displayValue');
+      inputValue = Value.innerHTML
+      console.log(inputoperator)
+      console.log(inputValue)
+      if (numberClick==true)
+      { 
+        previous_operator = inputoperator;
+
+        
+      }
+      numberClick = false;
+  }
+  dotted = false
+  return dotted, numberClick
   console.log(this);
 }
 document.addEventListener('DOMContentLoaded', function() {
@@ -103,4 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
     digitBtns[i].addEventListener('click', clearOnClick)
   }
 })
+
+
+
 
