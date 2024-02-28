@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-function numberOnClick() {
-  console.log(this);
-  let magicNum = this;
-  newList += magicNum
-  displayValue.innerHTML = newList;
-=======
 let newList = [""]
 let numberClick = true
 
@@ -30,7 +23,6 @@ function numberOnClick() {
       numberClick = true
     }
   }
->>>>>>> a7676cb (third)
 }
 document.addEventListener('DOMContentLoaded', function() {
   let digitBtns = document.getElementsByClassName('digit');
@@ -59,17 +51,6 @@ function operatorOnClick() {
 }
 document.addEventListener('DOMContentLoaded', function() {
   let digitBtns = document.getElementsByClassName('operators');
-<<<<<<< HEAD
-
-  for (let i = 0; i < digitBtns.length; i++) {
-    digitBtns[i].addEventListener('click', operatorOnClick)
-  }
-})
-
-let outputValue = document.getElementById("displayValue");
-
-displayValue.innerHTML = newList;
-=======
   let read_operator = this.innerHTML;
   let inputValue = document.getElementById('displayValue');
   
@@ -81,4 +62,3 @@ displayValue.innerHTML = newList;
 
 })
 
->>>>>>> a7676cb (third)
