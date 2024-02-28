@@ -1,8 +1,36 @@
+<<<<<<< HEAD
 function numberOnClick() {
   console.log(this);
   let magicNum = this;
   newList += magicNum
   displayValue.innerHTML = newList;
+=======
+let newList = [""]
+let numberClick = true
+
+function numberOnClick() {
+  if (numberClick==true)
+  {
+    if (newList!="0")
+    {
+      console.log(this);
+      let magicNum = this.innerHTML;
+      let outputValue = document.getElementById('displayValue');
+      newList += magicNum
+      outputValue.innerHTML = newList;
+      numberClick = true
+    }
+    if (newList=="0")
+    {
+      console.log(this);
+      let magicNum = this.innerHTML;
+      let outputValue = document.getElementById('displayValue');
+      newList = magicNum
+      outputValue.innerHTML = newList;
+      numberClick = true
+    }
+  }
+>>>>>>> a7676cb (third)
 }
 document.addEventListener('DOMContentLoaded', function() {
   let digitBtns = document.getElementsByClassName('digit');
@@ -13,9 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 
-let myClass = document.querySelector(".myclass");
-let digitBtn = document.querySelector("div#calculator p.digit.zero");
-let digitBtns = document.querySelectorAll("div#calculator p.digit");
 
 function id(id) {
   return document.getElementById(id);
@@ -34,6 +59,7 @@ function operatorOnClick() {
 }
 document.addEventListener('DOMContentLoaded', function() {
   let digitBtns = document.getElementsByClassName('operators');
+<<<<<<< HEAD
 
   for (let i = 0; i < digitBtns.length; i++) {
     digitBtns[i].addEventListener('click', operatorOnClick)
@@ -43,3 +69,16 @@ document.addEventListener('DOMContentLoaded', function() {
 let outputValue = document.getElementById("displayValue");
 
 displayValue.innerHTML = newList;
+=======
+  let read_operator = this.innerHTML;
+  let inputValue = document.getElementById('displayValue');
+  
+  
+  for (let i = 0; i < digitBtns.length; i++) {
+    digitBtns[i].addEventListener('click', operatorOnClick)
+  
+  }
+
+})
+
+>>>>>>> a7676cb (third)
