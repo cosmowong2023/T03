@@ -25,7 +25,7 @@ function numberOnClick() {
       numberClick = true;
     }
   }
-  return newList
+  return newList, numberClick
 }
 document.addEventListener('DOMContentLoaded', function() {
   let digitBtns = document.getElementsByClassName('digit');
@@ -82,6 +82,25 @@ document.addEventListener('DOMContentLoaded', function() {
   inputValue = document.getElementById('displayValue');
   for (let i = 0; i < digitBtns.length; i++) {
     digitBtns[i].addEventListener('click', operatorOnClick)
+  }
+})
+
+function clearOnClick(){
+  console.log(this);
+  let magicNum = this.innerHTML;
+  let outputValue = document.getElementById('displayValue');
+  newList = 0;
+  outputValue.innerHTML = newList;
+  numberClick = true;
+  dotted = false
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  let digitBtns = document.getElementsByClassName('clear');
+  let read_operator = this.innerHTML;
+  inputValue = document.getElementById('displayValue');
+  for (let i = 0; i < digitBtns.length; i++) {
+    digitBtns[i].addEventListener('click', clearOnClick)
   }
 })
 
