@@ -183,48 +183,49 @@ if (Math_error==false)
           if (previous_operator == "+")
           {
             if (inputoperator != "=")
-            {
-            previous_operator = inputoperator;
-            }
-            let result = parseFloat(inputValue) + parseFloat(NewValue);
-            Value.innerHTML = ""+result
-            inputValue=result
-            numberClick=false
+              {
+                previous_operator = inputoperator;
+              }
+              console.log(previous_operator)
+              let result = parseFloat(inputValue) + parseFloat(NewValue);
+              Value.innerHTML = ""+result
+              inputValue=result
+              numberClick=false
           }
-        else if (previous_operator == "-")
+          else if (previous_operator == "-")
           {
             if (inputoperator != "=")
-            {
-            previous_operator = inputoperator;
-            }
-            let result = parseFloat(inputValue) - parseFloat(NewValue);
-            Value.innerHTML = ""+result
-            inputValue=result
-            numberClick=false
+              {
+              previous_operator = inputoperator;
+              }
+              let result = parseFloat(inputValue) - parseFloat(NewValue);
+              Value.innerHTML = ""+result
+              inputValue=result
+              numberClick=false
           }
-      else if (previous_operator == "x")
-        {
-          if (inputoperator != "=")
-            {
-            previous_operator = inputoperator;
-            }
-            let result = parseFloat(inputValue) * parseFloat(NewValue);
-            Value.innerHTML = ""+result
-            inputValue=result
-            numberClick=false
-        }
-      else if (previous_operator == "/")
-        {  
+          else if (previous_operator == "x")
+          {
+            if (inputoperator != "=")
+              {
+              previous_operator = inputoperator;
+              }
+              let result = parseFloat(inputValue) * parseFloat(NewValue);
+              Value.innerHTML = ""+result
+              inputValue=result
+              numberClick=false
+          }
+          else if (previous_operator == "/")
+          {  
           if (parseFloat(NewValue) !=0)
-          {
-            if (inputoperator != "=")
+            {
+              if (inputoperator != "=")
             {
               previous_operator = inputoperator;
             }
-            let result = parseFloat(inputValue) / parseFloat(NewValue);
-            Value.innerHTML = ""+result
-            inputValue=result
-            numberClick=false
+              let result = parseFloat(inputValue) / parseFloat(NewValue);
+              Value.innerHTML = ""+result
+              inputValue=result
+              numberClick=false
           }
           else
           { let result = "Math Error!";
@@ -236,8 +237,9 @@ if (Math_error==false)
       else
       { 
         let inputoperator = this.innerHTML;
-        previous_operator = inputoperator;
         console.log(inputoperator)
+        console.log(previous_operator)
+        numberClick=false
       }
     }
   }
