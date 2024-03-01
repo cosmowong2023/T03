@@ -113,6 +113,7 @@ if (Math_error==false)
       
       { if (previous_operator == "+")
           {
+            alert("a"+inputoperator+"a");
             if (inputoperator != "=")
             {
             previous_operator = inputoperator;
@@ -244,8 +245,8 @@ if (Math_error==false)
     }
   }
   dotted = false
-  return dotted, numberClick
   console.log(this);
+  console.log("a"+previous_operator)
 }
 document.addEventListener('DOMContentLoaded', function() {
   let digitBtns = document.getElementsByClassName('operators');
